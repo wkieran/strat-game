@@ -24,6 +24,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        //hold left shift to sprint
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 10f;
+            //speed up animation to look better
+            animator.speed = 3;
+        }
+        else
+        {
+            moveSpeed = 5f;
+            animator.speed = 1;
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
