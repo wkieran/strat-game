@@ -21,8 +21,7 @@ public class PlacementMovement : MonoBehaviour
 
         
         movePoint.localPosition = player.position;
-       
-        
+      
     }
 
     // Start is called before the first frame update
