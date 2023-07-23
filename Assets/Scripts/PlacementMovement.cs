@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class PlacementMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+
+    public Transform player;
     public Transform movePoint;
 
     public LayerMask whatStopMovement;
@@ -16,13 +18,18 @@ public class PlacementMovement : MonoBehaviour
     private void OnEnable()
     {
         //This makes it so that the placer is always ontop of the player when placing mode is activated
-        movePoint.position = gameObject.transform.position;
+
+        
+        movePoint.localPosition = player.position;
+       
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
         movePoint.parent = null;
+        movePoint.localPosition = player.position;
     }
 
     // Update is called once per frame
